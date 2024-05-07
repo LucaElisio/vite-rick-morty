@@ -20,7 +20,7 @@ export default {
     get("https://rickandmortyapi.com/api/character")
     .then((resp) => {
       console.log(resp)
-      this.characterArray = resp.data.results;
+      this.store.characterArray = resp.data.results;
     });
   },
   methods: {
@@ -45,7 +45,7 @@ export default {
       })
       .then((resp) => {
       console.log(resp)
-      this.characterArray = resp.data.results;
+      this.store.characterArray = resp.data.results;
     });
 
     }
@@ -56,7 +56,7 @@ export default {
 <template>
   <h1>Rick and Morty App</h1>
   <AppSearch @statusChanged="showChar"/>
-  <CardList :characterArray="characterArray"/>
+  <CardList />
   <!-- <ul>
     <li v-for="curChar in characterArray">{{curChar.name}}</li>
   </ul> -->

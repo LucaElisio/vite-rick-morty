@@ -1,5 +1,7 @@
 <script>
 import AppChar from './AppChar.vue';
+import { store } from "../store";
+
 
 
 export default {
@@ -7,13 +9,9 @@ export default {
         AppChar
     },
 
-    props:{
-        characterArray: Array
-    },
-
     data() {
     return {
-
+        store
     };
     },
 };
@@ -22,7 +20,7 @@ export default {
 <template>
     <div class="container text-center">
         <div class="row">
-            <div class="col" v-for="curChar in characterArray">
+            <div class="col" v-for="curChar in store.characterArray">
                 <AppChar :charObj="curChar"/>
             </div>
         </div>
