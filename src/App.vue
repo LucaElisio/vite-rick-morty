@@ -1,7 +1,11 @@
 <script>
 import axios from "axios"
+import CardList from './components/CardList.vue';
 
 export default {
+  components: { 
+    CardList 
+  },
   data() {
     return {
       characterArray: [],
@@ -20,6 +24,7 @@ export default {
 
 <template>
   <h1>Rick and Morty App</h1>
+  <CardList :characterArray="characterArray"/>
   <!-- <ul>
     <li v-for="curChar in characterArray">{{curChar.name}}</li>
   </ul> -->
@@ -27,7 +32,7 @@ export default {
 
 <style scoped>
 h1 {
-  margin-top: 20px;
+  padding: 50px 0;
   text-align: center;
 }
 </style>
