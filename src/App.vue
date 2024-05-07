@@ -2,16 +2,17 @@
 import axios from "axios"
 import CardList from './components/CardList.vue';
 import AppSearch from './components/AppSearch.vue';
+import TotalResult from './components/TotalResult.vue';
 import { store } from "./store";
 
 export default {
   components: { 
     CardList,
     AppSearch,
+    TotalResult,
   },
   data() {
     return {
-      characterArray: [],
       store,
     };
   },
@@ -56,6 +57,7 @@ export default {
 <template>
   <h1>Rick and Morty App</h1>
   <AppSearch @statusChanged="showChar"/>
+  <TotalResult />
   <CardList />
   <!-- <ul>
     <li v-for="curChar in characterArray">{{curChar.name}}</li>
